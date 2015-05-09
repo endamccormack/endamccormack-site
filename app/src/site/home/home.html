@@ -1,0 +1,21 @@
+<md-item ng-repeat="its in ul.users" layout="row" class="content">
+  <md-content flex class="transparent">
+    <md-card>
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+          <h2>
+            {{ul.selected.name}}
+          </h2>
+          <span flex></span>
+          <md-button class="md-icon-button" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+            <md-icon md-svg-icon="share"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <p>{{ul.selected.content}}</p>
+      </md-card-content>
+    </md-card>
+  </md-content>
+</md-item>

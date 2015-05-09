@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>EndaMcCormack.com</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+  </head>
+
+  <body ng-app="starterApp" layout="column" ng-controller="SiteController as Site">
+      
+    
+    <md-sidenav class="md-whiteframe-z2" md-component-id="left">
+
+      <img src="assets/img/my-grad.jpg" class="full-width">
+        <h1 style="margin: -50px 0 15px 0; color: white; text-shadow:0px 0px 30px #000;" class="md-display-1">Enda McCormack</h1>
+      </img>
+      
+      <div layout="row">
+        <div flex>
+          <md-button aria-label="Linkedin" class="social-button" href="https://ie.linkedin.com/in/endamccormack" target="_blank">
+            <img src="assets/img/social-icons/linkedin64.png">
+              <md-tooltip>Linkedin</md-tooltip>
+            </img>
+          </md-button>
+        </div>
+        <div flex>
+          <md-button aria-label="GitHub" class="social-button" href="https://github.com/endamccormack" target="_blank">
+            <img src="assets/img/social-icons/github64.png">
+              <md-tooltip>GitHub</md-tooltip>
+            </img>
+          </md-button>
+        </div>
+        <div flex>
+          <md-button aria-label="Twitter" class="social-button" href="https://twitter.com/EndaMcCormack" target="_blank">
+            <img src="assets/img/social-icons/twitter64.png">
+              <md-tooltip>Twitter</md-tooltip>
+            </img>
+          </md-button>
+        </div>
+        <div flex>
+          <md-button aria-label="Email" class="social-button" href="mailto:endamccormack0@gmail.com" target="_blank">
+            <img src="assets/img/social-icons/email64.png">
+              <md-tooltip>Email</md-tooltip>
+            </img>
+          </md-button>
+        </div>
+      </div>
+
+      <md-list>
+        <md-item ng-repeat="page in Site.pages">
+            <md-button ng-click="Site.selectPage(page)" ng-class="{'selected' : page === Site.selected }">
+              <!-- <md-icon md-svg-icon="{{page}}" class="avatar"></md-icon> -->
+             {{page.name}}
+            </md-button>
+        </md-item>
+      </md-list>
+    </md-sidenav>
+
+    <md-toolbar >
+      <md-toolbar layout="row" class="md-hue-2 md-whiteframe-z1">
+      <!-- hide-gt-sm -->
+        <md-button class="menu"  ng-click="Site.toggleList()" aria-label="Show Pages List">
+          <md-icon md-svg-icon="menu" ></md-icon>
+        </md-button>
+        <h1>EndaMcCormack.com</h1>
+        <span style="width:100%;"></span><h1 style="font-weight:700; margin-right:50px; background: red; padding:5px;">ALPHA</h1></span>
+      </md-toolbar>
+      <span id="page-title">
+        <h2  aria-describedby="headings-output" class="md-display-2">{{Site.selected}}</h2>
+      </span>
+    </md-toolbar>
+
+    <div flex layout="row">
+
+      <div id="main-wrapper" class="full-width">
+        {{}}
+      </div>
+
+    </div>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+<!--    <script src="./src/site/users/Users.js"></script>
+    <script src="./src/site/users/UserController.js"></script>
+    <script src="./src/site/users/UserService.js"></script> -->
+
+    <script src="./src/site/Site.js"></script>
+    <script src="./src/site/SiteController.js"></script>
+    <script src="./src/site/SiteClient.js"></script>
+
+    <script src="./src/site/global/app.js"></script>
+
+  </body>
+</html>
