@@ -16,8 +16,9 @@
     self.toggleList   = togglePagesList;
     // self.share        = share;
 
-    // Load all registered users
 
+
+    // Load all pages
     siteClient
           .loadAllPages()
           .then( function( pages ) {
@@ -39,10 +40,6 @@
       });
     }
 
-    /**
-     * Select the current avatars
-     * @param menuId
-     */
     function selectPage ( page ) {
       self.selected = angular.isNumber(page) ? $scope.pages[page] : page["name"];
       self.toggleList();
