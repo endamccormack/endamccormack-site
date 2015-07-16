@@ -1,12 +1,15 @@
 'use strict';
 
-/* Controllers */
-function RouteController($scope, $http, $route, $routeParams, $compile) {
-    //$route.current.templateUrl = 'partials/' + $routeParams.name + ".html";
-    $route.current.templateUrl = "src/partials/test.html";
+var blog1 = 'https://raw.githubusercontent.com/endamccormack/' +
+            'endamccormack-site-content/master/live/blog/blog1.md';
 
-    $http.get($route.current.templateUrl).then(function (msg) {
-        $('#views').html($compile(msg.data)($scope));
+var RouteController = angular.module('RouteController', []);
+
+RouteController.controller('mainController',
+  function($scope, $http, $compile, $sce) {
+    $http.get(blog1).then(function(msg) {
+      var converter = new showdown.Converter();
+      $scope.partial = $sce.trustAsHtml(converter.makeHtml(msg.data));
     });
-}
-RouteController.$inject = ['$scope', '$http', '$route', '$routeParams', '$compile'];
+  }
+)

@@ -1,47 +1,47 @@
-(function(){
-
+(function() {
   angular
-       .module('site')
-       .controller('SiteController', [
-          'siteClient', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$http',
-          SiteController
-       ]);
+    .module('site')
+    .controller('SiteController', [
+      'siteClient', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$http',
+      SiteController
+    ]);
 
-  function SiteController( siteClient, $mdSidenav, $mdBottomSheet, $log, $q, $http) {
+  function SiteController(siteClient, $mdSidenav,
+                          $mdBottomSheet, $log, $q, $http) {
     var self = this;
 
-    self.selected     = null;
-    self.pages        = [ ];
-    self.selectPage   = selectPage;
-    self.toggleList   = togglePagesList;
-    // self.share        = share;
+    self.selected = null;
+    self.pages = [];
+    self.selectPage = selectPage;
+    self.toggleList = togglePagesList;
 
-
+    self.listPageManager;
+    self.itemPageManager;
+    // self.share      = share;
 
     // Load all pages
     siteClient
-          .loadAllPages()
-          .then( function( pages ) {
-            self.pages    = pages.data;
-            self.selected = self.pages[0]["name"];
+      .loadAllPages()
+        .then(function(pages) {
+          self.pages = pages.data;
+          self.selected = self.pages[0].name;
 
-            //remove the .extension
-            self.pages.map(function(x, i, ar){
-                ar[i]["name"] = ar[i]["name"].split(".")[0];
-            });
-
+          //remove the .extension
+          self.pages.map(function(x, i, ar) {
+            ar[i].name = ar[i].name.split('.')[0];
           });
+        });
 
     function togglePagesList() {
       var pending = $mdBottomSheet.hide() || $q.when(true);
 
-      pending.then(function(){
+      pending.then(function() {
         $mdSidenav('left').toggle();
       });
     }
 
-    function selectPage ( page ) {
-      self.selected = angular.isNumber(page) ? $scope.pages[page] : page["name"];
+    function selectPage(page) {
+      self.selected = angular.isNumber(page) ? $scope.pages[page] : page.name;
       self.toggleList();
     }
   }

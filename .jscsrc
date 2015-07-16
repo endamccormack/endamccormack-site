@@ -1,0 +1,5 @@
+{
+   "preset": "google",
+   "excludeFiles": ["node_modules/**", "app/bower_components/**", ".git/**",
+                     "karma.conf.js"]
+}

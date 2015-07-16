@@ -1,4 +1,4 @@
-(function(){
+(function() {
   'use strict';
-  angular.module('site', [ 'ngMaterial' ]);
+  angular.module('site', ['ngMaterial']);
 })();

@@ -14,14 +14,14 @@
   </head>
 
   <body ng-app="starterApp" layout="column" ng-controller="SiteController as Site">
-      
-    
+
+
     <md-sidenav class="md-whiteframe-z2" md-component-id="left">
 
       <img src="assets/img/my-grad.jpg" class="full-width">
         <h1 style="margin: -50px 0 15px 0; color: white; text-shadow:0px 0px 30px #000;" class="md-display-1">Enda McCormack</h1>
       </img>
-      
+
       <div layout="row">
         <div flex>
           <md-button aria-label="Linkedin" class="social-button" href="https://ie.linkedin.com/in/endamccormack" target="_blank">
@@ -80,7 +80,7 @@
           <md-icon md-svg-icon="menu" ></md-icon>
         </md-button>
         <h1>EndaMcCormack.com</h1>
-        <span style="width:100%;"></span><h1 style="font-weight:700; margin-right:100px; padding:5px; border-radius: 3px;" class="accent-color">ALPHA</h1></span>
+        <span style="width:100%;"></span><h1 class="menu md-button md-default-theme">ALPHA</h1>
       </md-toolbar>
       <span id="page-title">
         <h2  aria-describedby="headings-output" class="md-display-2">{{Site.selected}}</h2>
@@ -100,10 +100,7 @@
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
-
-<!--    <script src="./src/site/users/Users.js"></script>
-    <script src="./src/site/users/UserController.js"></script>
-    <script src="./src/site/users/UserService.js"></script> -->
+    <script src="./bower_components/showdown/dist/showdown.min.js"></script>
 
     <script src="./src/route/RouteController.js"></script>
 
