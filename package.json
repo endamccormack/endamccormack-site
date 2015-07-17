@@ -1,9 +1,9 @@
 {
-  "name": "material-start",
+  "name": "EndaMcCormack-site",
   "private": true,
   "version": "0.0.0",
   "description": "A starter project for AngularJS Material",
-  "repository": "https://github.com/angular/material-start",
+  "repository": "https://github.com/endamccormack/endamccormack-site",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
