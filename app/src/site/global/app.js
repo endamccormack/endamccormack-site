@@ -5,12 +5,12 @@ angular
 
     $routeProvider
     .when('/', {
-      templateUrl : 'src/site/partials/home.html'
+      templateUrl: 'src/site/partials/home.html'
     })
     .when('/:url', {
-      templateUrl : 'src/site/partials/home.html',
-      controller  : 'mainController'
-    })
+      templateUrl: 'src/site/partials/test.html',
+      controller: 'mainController'
+    });
 
     $mdIconProvider
       .defaultIconSet('./assets/svg/avatars.svg',           128)
@@ -25,4 +25,4 @@ angular
     $mdThemingProvider.theme('default')
       .primaryPalette('green')
       .accentPalette('brown');
-  })
+  });

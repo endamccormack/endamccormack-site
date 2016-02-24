@@ -9,7 +9,7 @@ RouteController.controller('mainController',
   function($scope, $http, $compile, $sce) {
     $http.get(blog1).then(function(msg) {
       var converter = new showdown.Converter();
-      $scope.partial = $sce.trustAsHtml(converter.makeHtml(msg.data));
+      $scope.message = $sce.trustAsHtml(converter.makeHtml(msg.data));
     });
   }
-)
+);
