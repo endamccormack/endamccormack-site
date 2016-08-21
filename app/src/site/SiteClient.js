@@ -7,18 +7,8 @@
   var url = 'https://api.github.com/repos/endamccormack' +
             '/endamccormack-site-content/contents/live';
 
-  /**
-  * Users DataService
-  * Uses embedded, hard-coded data model; acts asynchronously to simulate
-  * remote data service call(s).
-  *
-  * @returns {{loadAll: Function}}
-  * @constructor
-  */
   function SiteClient($q, $http) {
     var pages = [ ];
-
-    // Promise-based API
     return {
       loadAllPages: function() {
 

@@ -1,0 +1,45 @@
+<div ng-repeat="blog in blogs" layout="row" layout-align="center">
+    <a ng-href="/#/blog/{{blog.name}}" flex-gt-sm="90" flex-gt-md="70">
+        <md-card md-colors="::{backgroundColor: '{{theme}}-primary-500'}">
+            <md-card-title>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media" layout md-colors="::{background: '{{theme}}-accent'}">
+                        <md-icon md-svg-icon="share"></md-icon>
+                    </div>
+                </md-card-title-media>
+                <md-card-title-text>
+                    <span class="md-headline">{{blog.name}}</span>
+                    <span class="md-subhead description">This card is colored according the {{theme}} theme</span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </a>
+</div>
+
+<style>
+    a:link {
+        text-decoration: none;
+    }
+    .card-media {
+        margin-right: 16px;
+        border-radius: 50%;
+        overflow: hidden; }
+    .md-subhead.description {
+        color: rgba(255, 255, 255, 0.7); }
+    .card-media md-icon {
+        width: 40px;
+        height: 40px;
+        color: rgba(255, 255, 255, 0.87); }
+    span.card-title {
+        padding-left: 15px;
+        margin-top: 20px; }
+    code.css {
+        background-color: #fffcc2; }
+    p.footnote code {
+        font-size: 0.85em; }
+    p.footnote {
+        font-size: 0.85em;
+        margin: 30px;
+        padding: 5px;
+        background-color: rgba(205, 205, 205, 0.45); }
+</style>

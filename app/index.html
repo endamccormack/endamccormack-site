@@ -90,7 +90,9 @@
     <div flex layout="row">
 
       <div id="main-wrapper" class="full-width">
-        <div id="views" ng-view></div>
+        <md-content flex layout-padding>
+          <div id="views" ng-view></div>
+        </md-content>
       </div>
 
     </div>
@@ -102,7 +104,8 @@
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
     <script src="./bower_components/showdown/dist/showdown.min.js"></script>
 
-    <script src="./src/route/RouteController.js"></script>
+    <script src="./src/site/blog/view/ViewBlogController.js"></script>
+    <script src="./src/site/blog/BlogController.js"></script>
 
     <script src="./src/site/Site.js"></script>
     <script src="./src/site/SiteController.js"></script>
